@@ -16,6 +16,8 @@ app.controller("postapp",['$scope','$http', function($scope,$http){
                       }
         $http.post("/data",data).then(function(res) {
             console.log(res)
+            $scope.name=""
+            $scope.text=""
             refresh();
             
           })
