@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Post</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+   
+</head>
+<body ng-controller="postapp">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-12 col-sm-8">
+                <div class="main">
+                    <b>Name</b>
+                    <br>
+                    <input type="text" ng-model="name">
+                    <br><br>
+                    <b>Your Post</b>
+    <textarea  rows="8" cols="100" ng-model="text"></textarea>
+   
+</div>
+  
+
+    
+       
+    </div>
+    <div class="col-2 col-sm-2 ">
+        <div class="al">
+            <button class="btn btn-danger" ng-click="Post()">Post</button>
+        </div>
+    </div>
+    
+    </div>
+    <div class="row">
+        <table class="table">
+            <tbody>
+            <tr ng-repeat="x in response.data">
+                <td>{{x["Post"]}} <br>--{{x["Name"]}}</td><td>{{x["number"]}}<br><i class="fas fa-thumbs-up" ng-click="like(x['_id'],1)"></i>
+                    <i class="fas fa-thumbs-down" ng-click="like(x['_id'],-1)"></i></td><td>{{x["Time"]}}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
